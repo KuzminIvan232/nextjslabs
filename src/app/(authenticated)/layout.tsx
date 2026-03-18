@@ -21,7 +21,7 @@ export default function AuthenticatedLayout({ children }: Readonly<{ children: R
                     <p>Security</p>
                 </NavLink>
             </div>
-            <div>
+            <div className="w-full h-screen flex flex-col items-center box-border">
                 {children}
             </div>
         </div>

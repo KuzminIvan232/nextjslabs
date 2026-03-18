@@ -1,0 +1,11 @@
+.global-layout-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-base);
+}
+
+.page-section {
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}

@@ -28,9 +28,8 @@ export default async function FavoritePage() {
             <h1 className="text-xl p-4">Favorite Articles Page</h1>
             <div>
                 {posts.map(post => (
-                    <Suspense fallback={<p>Loading post..</p>}>
+                    <Suspense key={post.id} fallback={<p>Loading post..</p>}>
                         <FavoriteArticle
-                            key={post.id}
                             id={post.id}
                             title={post.title}
                             body={post.body}

@@ -1,3 +1,4 @@
+import { Card, CardContent, Typography, Container, Grid } from '@mui/material';
 
 interface Post {
     id: number,
@@ -16,15 +17,21 @@ export default async function ArticlesPage() {
     console.log(posts);
 
     return (
-        <div>
-            <h1 className="text-4xl p-4">Articles Page</h1>
+        <div className='bg-base rounded-md m-6'>
+            <h1 className="p-4">Articles Page</h1>
             <h2 className="text-2xl p-4">Posts</h2>
-            {posts.map(post => (
-                <article className="w-md p-4">
-                    <h3 className="font-bold text-xl">{post.title}</h3>
-                    <p>{post.body}</p>
-                </article>
-            ))}
+            <Grid container spacing={2}>
+                {posts.map((post) => (
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={post.id}>
+                        <Card sx={{ height: '100%', backgroundColor: 'var(--light-primary-color)' }}>
+                            <CardContent>
+                                <Typography variant="h5" gutterBottom>{post.title}</Typography>
+                                <Typography variant="body2">{post.body}</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
         </div>
     );
 }
